@@ -14,7 +14,6 @@ import {
 import CIcon from '@coreui/icons-react'
 import { cilMenu } from '@coreui/icons'
 
-import { AppBreadcrumb } from './index'
 import logo from 'src/assets/images/QClogo.png'
 
 const AppHeader = () => {
@@ -48,9 +47,6 @@ const AppHeader = () => {
         <CHeaderNav className="ms-3"></CHeaderNav>
       </CContainer>
       <CHeaderDivider />
-      <CContainer fluid>
-        <AppBreadcrumb />
-      </CContainer>
     </CHeader>
   )
 }
