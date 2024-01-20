@@ -6,7 +6,7 @@ import CIcon from '@coreui/icons-react'
 
 import { AppSidebarNav } from './AppSidebarNav'
 
-import logo512 from 'src/assets/images/logo512.png'
+import logo512 from 'src/assets/images/QClogo.png'
 import { sygnet } from 'src/assets/brand/sygnet'
 
 import SimpleBar from 'simplebar-react'
@@ -27,6 +27,7 @@ const AppSidebar = () => {
       onVisibleChange={(visible) => {
         dispatch({ type: 'set', sidebarShow: visible })
       }}
+      dir="rtl"
     >
       <CSidebarBrand className="d-none d-md-flex" to="/">
         <img
