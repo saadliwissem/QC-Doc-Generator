@@ -2,7 +2,7 @@
   "name": "QC-Document_Generator",
   "version": "4.5.0",
   "description": "Qatar Charity Document Generator",
-  "homepage": "https://saadliwissem.github.io/QC-Doc-Generator.tn",
+  "homepage": "https://saadliwissem.github.io/QC-Doc-Generator",
   "license": "MIT",
   "scripts": {
     "build": "react-scripts build",
