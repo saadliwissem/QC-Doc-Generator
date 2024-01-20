@@ -1,14 +1,9 @@
 {
-  "name": "@coreui/coreui-free-react-admin-template",
+  "name": "QC-Document_Generator",
   "version": "4.5.0",
   "description": "Qatar Charity Document Generator",
-  "homepage": "https://saadliwissem.github.io/QC-Doc-Generator",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:coreui/coreui-free-react-admin-template.git"
-  },
+  "homepage": "https://QC-Doc-Generator.tn",
   "license": "MIT",
-  "author": "The CoreUI Team (https://github.com/orgs/coreui/people)",
   "scripts": {
     "build": "react-scripts build",
     "eject": "react-scripts eject",
