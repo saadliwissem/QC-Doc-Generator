@@ -1,14 +1,14 @@
 {
-  "short_name": "CoreUI-React",
-  "name": "CoreUI-React sample",
+  "short_name": "QC DOC Gener",
+  "name": "QC Document Generator",
   "icons": [
     {
-      "src": "./assets/img/favicon.png",
+      "src": "./assets/img/images/QClogo.png",
       "sizes": "100x100",
       "type": "image/png"
     }
   ],
-  "start_url": ".",
+  "start_url": "https://saadliwissem.github.io/QC-Doc-Generator",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
