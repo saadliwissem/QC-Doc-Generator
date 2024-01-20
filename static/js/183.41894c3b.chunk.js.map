@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/183.41894c3b.chunk.js","mappings":"gLAEA,MAGA,EAHkBA,KACTC,EAAAA,EAAAA,KAAA,OAAAC,SAAK,W","sources":["views/pharmacies/pharmaciesList.js"],"sourcesContent":["import React from 'react'\n\nconst UsersList = () => {\n  return <div>nothing</div>\n}\nexport default UsersList\n"],"names":["UsersList","_jsx","children"],"sourceRoot":""}
