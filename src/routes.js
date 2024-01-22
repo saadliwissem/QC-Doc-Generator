@@ -15,6 +15,7 @@ const Validation = React.lazy(() => import('./views/forms/validation/Validation'
 //pharmacies
 const Pharmacies = React.lazy(() => import('./views/pharmacies/pharmaciesList'))
 const AddPharmacies = React.lazy(() => import('./views/pharmacies/addPharmacy'))
+const IstibdalMakful = React.lazy(() => import('./views/istibdalMakful/IstibdalMakful'))
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
@@ -30,6 +31,7 @@ const routes = [
   { path: '/forms/validation', name: 'Validation', element: Validation },
   { path: '/pharmacies', name: 'pharmacies', element: Pharmacies },
   { path: '/pharmacies/addPharmacy', name: 'Add a new pharmacies', element: AddPharmacies },
+  { path: '/istibdalMakful', name: 'istibdalMakful', element: IstibdalMakful },
 ]
 
 export default routes

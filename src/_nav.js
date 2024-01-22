@@ -23,8 +23,8 @@ const _nav = [
   },
   {
     component: CNavItem,
-    name: 'وثيقة',
-    to: '/theme/colors',
+    name: 'إجراء استبدال مكفول',
+    to: '/istibdalMakful',
     icon: <CIcon icon={cilDescription} customClassName="nav-icon" />,
   },
   {
