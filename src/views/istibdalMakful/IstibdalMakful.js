@@ -9,6 +9,8 @@ import {
   CFormLabel,
   CInputGroup,
   CButton,
+  CFormSelect,
+  CFormTextarea,
 } from '@coreui/react'
 
 const IstibdalMakful = () => {
@@ -131,6 +133,148 @@ const IstibdalMakful = () => {
                 onChange={() => handleCheckboxChange2(index)}
               />
             ))}
+          </CCardBody>
+          <CCardBody>
+            <CFormLabel
+              htmlFor="fullName"
+              style={{ color: 'blue', fontWeight: 'bold', fontSize: 20 }}
+            >
+              معلومات عن المكفول الحالي
+            </CFormLabel>
+            <br></br>
+            <CFormLabel htmlFor="pharmacyName">فئة المكفول الحالي</CFormLabel>
+
+            <CInputGroup className="mb-3">
+              <CFormSelect aria-label="Default select example">
+                <option value="">يتيم</option>
+                <option value="male">أسرة </option>
+                <option value="female">طالب</option>
+                <option value="">شخص حامل لإعاقة</option>
+              </CFormSelect>
+            </CInputGroup>
+            <CFormLabel htmlFor="ownerName">كود المكفول</CFormLabel>
+
+            <CInputGroup className="mb-3">
+              <CFormInput
+                name="ownerName"
+                //value="value"
+                //onChange={handleInputChange}
+                placeholder="كود المكفول"
+                aria-label="Recipient&#39;s username"
+                aria-describedby="basic-addon2"
+              />
+            </CInputGroup>
+            <CFormLabel htmlFor="PhoneNumber">الإسم الكامل</CFormLabel>
+            <CInputGroup className="mb-3">
+              <CFormInput
+                id="PhoneNumber"
+                name="phoneNumber"
+                //value={pharmacyData.phoneNumber}
+                //onChange={handleInputChange}
+                placeholder="الإسم الكامل"
+                aria-describedby="basic-addon3"
+              />
+            </CInputGroup>
+            <CFormLabel htmlFor="Longitude">الجنس</CFormLabel>
+            <CFormSelect aria-label="Default select example">
+              <option value="female">ذكر</option>
+              <option value="">أنثى</option>
+            </CFormSelect>
+          </CCardBody>
+          <CCardBody>
+            <CFormLabel
+              htmlFor="fullName"
+              style={{ color: 'blue', fontWeight: 'bold', fontSize: 20 }}
+            >
+              معلومات عن المكفول الجديد
+            </CFormLabel>
+            <br></br>
+            <CFormLabel htmlFor="pharmacyName">فئة المكفول الجديد</CFormLabel>
+
+            <CInputGroup className="mb-3">
+              <CFormSelect aria-label="Default select example">
+                <option value="">يتيم</option>
+                <option value="male">أسرة </option>
+                <option value="female">طالب</option>
+                <option value="">شخص حامل لإعاقة</option>
+              </CFormSelect>
+            </CInputGroup>
+            <CFormLabel htmlFor="ownerName">كود المكفول</CFormLabel>
+
+            <CInputGroup className="mb-3">
+              <CFormInput
+                name="ownerName"
+                //value="value"
+                //onChange={handleInputChange}
+                placeholder="كود المكفول"
+                aria-label="Recipient&#39;s username"
+                aria-describedby="basic-addon2"
+              />
+            </CInputGroup>
+            <CFormLabel htmlFor="PhoneNumber">الإسم الكامل</CFormLabel>
+            <CInputGroup className="mb-3">
+              <CFormInput
+                id="PhoneNumber"
+                name="phoneNumber"
+                //value={pharmacyData.phoneNumber}
+                //onChange={handleInputChange}
+                placeholder="الإسم الكامل"
+                aria-describedby="basic-addon3"
+              />
+            </CInputGroup>
+            <CFormLabel htmlFor="Longitude">الجنس</CFormLabel>
+            <CFormSelect aria-label="Default select example">
+              <option value="female">ذكر</option>
+              <option value="">أنثى</option>
+            </CFormSelect>
+          </CCardBody>
+          <CCardBody>
+            <CFormLabel
+              htmlFor="fullName"
+              style={{ color: 'blue', fontWeight: 'bold', fontSize: 20 }}
+            >
+              معلومات عن الإستبدال
+            </CFormLabel>
+            <br></br>
+            <CFormLabel htmlFor="pharmacyName">رقم طلب الإستبدال</CFormLabel>
+
+            <CInputGroup className="mb-3">
+              <CFormInput
+                name="ownerName"
+                //value="value"
+                //onChange={handleInputChange}
+                placeholder="رقم طلب الإستبدال"
+                aria-label="Recipient&#39;s username"
+                aria-describedby="basic-addon2"
+              />
+            </CInputGroup>
+            <CFormLabel htmlFor="PhoneNumber">تاريخ الطلب</CFormLabel>
+            <CInputGroup className="mb-3">
+              <CFormInput
+                name="ownerName"
+                //value="value"
+                //onChange={handleInputChange}
+                placeholder="تاريخ الطلب"
+                aria-label="Recipient&#39;s username"
+                aria-describedby="basic-addon2"
+              />
+            </CInputGroup>
+
+            <CFormLabel htmlFor="Longitude">تاريخ تفعيل الإستبدال</CFormLabel>
+            <CInputGroup className="mb-3">
+              <CFormInput
+                name="ownerName"
+                //value="value"
+                //onChange={handleInputChange}
+                placeholder="تاريخ تفعيل الإستبدال"
+                aria-label="Recipient&#39;s username"
+                aria-describedby="basic-addon2"
+              />
+            </CInputGroup>
+            <div className="mb-3">
+              <CFormLabel htmlFor="exampleFormControlTextarea1">ملاحظات</CFormLabel>
+              <CFormTextarea id="exampleFormControlTextarea1" rows="3"></CFormTextarea>
+            </div>
           </CCardBody>
         </CCard>
 
