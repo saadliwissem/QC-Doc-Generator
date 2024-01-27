@@ -29,14 +29,13 @@ const IstibdalMakful = () => {
     'أخرى',
   ]
   const options2 = [
-    'مرض المكفول أو أمه',
-    'الفقر /الوضعية االجتماعية ',
-    'قرب تجاوز سن الكفالة',
-    ' يتيم حامل إلعاقة',
-    'عدد أفراد األسرة أكثر من 5',
-    'وفاة األم واألب',
-    ' طول فترة التسويق',
-    'إجمالي النقاط',
+    'مرض المكفول أو أمه (4ن)',
+    'الفقر /الوضعية االجتماعية (3ن) ',
+    'قرب تجاوز سن الكفالة (2ن)',
+    ' يتيم حامل إلعاقة (3ن)',
+    'عدد أفراد األسرة أكثر من 5 (3ن)',
+    'وفاة األم واألب (3ن)',
+    ' طول فترة التسويق (2ن)',
   ]
   const [formData, setFormData] = useState({
     selectedOptions: Array(options.length).fill(false),
@@ -64,6 +63,9 @@ const IstibdalMakful = () => {
     // Handle submission logic, e.g., send data to the server
     console.log(formData)
     console.log(formData2)
+    console.log(makfulHali)
+    console.log(makfulJadid)
+    console.log(istibdal)
 
     // Reset form fields after successful submission
     setFormData({
@@ -80,8 +82,64 @@ const IstibdalMakful = () => {
 
   //makful 7ali info
 
-  const [makfulHali, setMakfulHali] = useState()
+  const [makfulHali, setMakfulHali] = useState({
+    situation: 'يتيم',
+    code: '',
+    nom: '',
+    sexe: 'ذكر',
+  })
+  const handleOldSituationChange = (e) => {
+    setMakfulHali({ ...makfulHali, situation: e.target.value })
+  }
+  const handleOldCodeChange = (e) => {
+    setMakfulHali({ ...makfulHali, code: e.target.value })
+  }
+  const handleOldNomChange = (e) => {
+    setMakfulHali({ ...makfulHali, nom: e.target.value })
+  }
+  const handleOldSexeChange = (e) => {
+    setMakfulHali({ ...makfulHali, sexe: e.target.value })
+  }
+  //makful jadid info
 
+  const [makfulJadid, setMakfulJadid] = useState({
+    situation: 'يتيم',
+    code: '',
+    nom: '',
+    sexe: 'ذكر',
+  })
+  const handleNewSituationChange = (e) => {
+    setMakfulJadid({ ...makfulJadid, situation: e.target.value })
+  }
+  const handleNewCodeChange = (e) => {
+    setMakfulJadid({ ...makfulJadid, code: e.target.value })
+  }
+  const handleNewNomChange = (e) => {
+    setMakfulJadid({ ...makfulJadid, nom: e.target.value })
+  }
+  const handleNewSexeChange = (e) => {
+    setMakfulJadid({ ...makfulJadid, sexe: e.target.value })
+  }
+
+  //
+  const [istibdal, setistibdal] = useState({
+    num: 'يتيم',
+    askDate: '',
+    confirmDate: '',
+    note: '',
+  })
+  const handleNum = (e) => {
+    setistibdal({ ...istibdal, num: e.target.value })
+  }
+  const handleAskDate = (e) => {
+    setistibdal({ ...istibdal, askDate: e.target.value })
+  }
+  const handleConfirmDate = (e) => {
+    setistibdal({ ...istibdal, confirmDate: e.target.value })
+  }
+  const handleNote = (e) => {
+    setistibdal({ ...istibdal, note: e.target.value })
+  }
   return (
     <div dir="rtl">
       <CCol xs={12}>
@@ -90,10 +148,7 @@ const IstibdalMakful = () => {
             <strong>إجراء استبدال مكفول</strong>
           </CCardHeader>
           <CCardBody>
-            <CFormLabel
-              htmlFor="fullName"
-              style={{ color: 'blue', fontWeight: 'bold', fontSize: 20 }}
-            >
+            <CFormLabel style={{ color: 'blue', fontWeight: 'bold', fontSize: 20 }}>
               أسباب الإستبدال
             </CFormLabel>
 
@@ -125,41 +180,36 @@ const IstibdalMakful = () => {
             )}
           </CCardBody>
           <CCardBody>
-            <CFormLabel
-              htmlFor="fullName"
-              style={{ color: 'blue', fontWeight: 'bold', fontSize: 20 }}
-            >
+            <CFormLabel style={{ color: 'blue', fontWeight: 'bold', fontSize: 20 }}>
               معيار الإستبدال
             </CFormLabel>
-
             {options2.map((option, index) => (
               <CFormCheck
                 key={index}
                 type="checkbox"
                 label={'-' + option}
-                id={`option-${index + 1}`}
+                id={`option2-${index + 1}`}
                 checked={formData2.selectedOptions[index]}
                 onChange={() => handleCheckboxChange2(index)}
               />
             ))}
+            <br></br>
+            إجمالي النقاط : /20
           </CCardBody>
 
           <CCardBody>
-            <CFormLabel
-              htmlFor="fullName"
-              style={{ color: 'blue', fontWeight: 'bold', fontSize: 20 }}
-            >
+            <CFormLabel style={{ color: 'blue', fontWeight: 'bold', fontSize: 20 }}>
               معلومات عن المكفول الحالي
             </CFormLabel>
             <br></br>
             <CFormLabel htmlFor="pharmacyName">فئة المكفول الحالي</CFormLabel>
 
             <CInputGroup className="mb-3">
-              <CFormSelect aria-label="Default select example">
-                <option value="">يتيم</option>
-                <option value="male">أسرة </option>
-                <option value="female">طالب</option>
-                <option value="">شخص حامل لإعاقة</option>
+              <CFormSelect onChange={handleOldSituationChange} aria-label="Default select example">
+                <option value="يتيم">يتيم</option>
+                <option value="أسرة">أسرة </option>
+                <option value="طالب">طالب</option>
+                <option value="شخص حامل لإعاقة">شخص حامل لإعاقة</option>
               </CFormSelect>
             </CInputGroup>
             <CFormLabel htmlFor="ownerName">كود المكفول</CFormLabel>
@@ -168,7 +218,7 @@ const IstibdalMakful = () => {
               <CFormInput
                 name="ownerName"
                 //value="value"
-                //onChange={handleInputChange}
+                onChange={handleOldCodeChange}
                 placeholder="كود المكفول"
                 aria-label="Recipient&#39;s username"
                 aria-describedby="basic-addon2"
@@ -179,34 +229,30 @@ const IstibdalMakful = () => {
               <CFormInput
                 id="PhoneNumber"
                 name="phoneNumber"
-                //value={pharmacyData.phoneNumber}
-                //onChange={handleInputChange}
+                onChange={handleOldNomChange}
                 placeholder="الإسم الكامل"
                 aria-describedby="basic-addon3"
               />
             </CInputGroup>
             <CFormLabel htmlFor="Longitude">الجنس</CFormLabel>
-            <CFormSelect aria-label="Default select example">
-              <option value="female">ذكر</option>
-              <option value="">أنثى</option>
+            <CFormSelect onChange={handleOldSexeChange} aria-label="Default select example">
+              <option value="ذكر">ذكر</option>
+              <option value="أنثى">أنثى</option>
             </CFormSelect>
           </CCardBody>
           <CCardBody>
-            <CFormLabel
-              htmlFor="fullName"
-              style={{ color: 'blue', fontWeight: 'bold', fontSize: 20 }}
-            >
+            <CFormLabel style={{ color: 'blue', fontWeight: 'bold', fontSize: 20 }}>
               معلومات عن المكفول الجديد
             </CFormLabel>
             <br></br>
             <CFormLabel htmlFor="pharmacyName">فئة المكفول الجديد</CFormLabel>
 
             <CInputGroup className="mb-3">
-              <CFormSelect aria-label="Default select example">
-                <option value="">يتيم</option>
-                <option value="male">أسرة </option>
-                <option value="female">طالب</option>
-                <option value="">شخص حامل لإعاقة</option>
+              <CFormSelect onChange={handleNewSituationChange} aria-label="Default select example">
+                <option value="يتيم">يتيم</option>
+                <option value="أسرة">أسرة </option>
+                <option value="طالب">طالب</option>
+                <option value="شخص حامل لإعاقة">شخص حامل لإعاقة</option>
               </CFormSelect>
             </CInputGroup>
             <CFormLabel htmlFor="ownerName">كود المكفول</CFormLabel>
@@ -215,7 +261,7 @@ const IstibdalMakful = () => {
               <CFormInput
                 name="ownerName"
                 //value="value"
-                //onChange={handleInputChange}
+                onChange={handleNewCodeChange}
                 placeholder="كود المكفول"
                 aria-label="Recipient&#39;s username"
                 aria-describedby="basic-addon2"
@@ -227,22 +273,19 @@ const IstibdalMakful = () => {
                 id="PhoneNumber"
                 name="phoneNumber"
                 //value={pharmacyData.phoneNumber}
-                //onChange={handleInputChange}
+                onChange={handleNewNomChange}
                 placeholder="الإسم الكامل"
                 aria-describedby="basic-addon3"
               />
             </CInputGroup>
             <CFormLabel htmlFor="Longitude">الجنس</CFormLabel>
-            <CFormSelect aria-label="Default select example">
-              <option value="female">ذكر</option>
-              <option value="">أنثى</option>
+            <CFormSelect onChange={handleNewSexeChange} aria-label="Default select example">
+              <option value="ذكر">ذكر</option>
+              <option value="أنثى">أنثى</option>
             </CFormSelect>
           </CCardBody>
           <CCardBody>
-            <CFormLabel
-              htmlFor="fullName"
-              style={{ color: 'blue', fontWeight: 'bold', fontSize: 20 }}
-            >
+            <CFormLabel style={{ color: 'blue', fontWeight: 'bold', fontSize: 20 }}>
               معلومات عن الإستبدال
             </CFormLabel>
             <br></br>
@@ -252,7 +295,7 @@ const IstibdalMakful = () => {
               <CFormInput
                 name="ownerName"
                 //value="value"
-                //onChange={handleInputChange}
+                onChange={handleNum}
                 placeholder="رقم طلب الإستبدال"
                 aria-label="Recipient&#39;s username"
                 aria-describedby="basic-addon2"
@@ -262,9 +305,9 @@ const IstibdalMakful = () => {
             <CInputGroup className="mb-3">
               <CFormInput
                 name="ownerName"
+                type="date"
                 //value="value"
-                //onChange={handleInputChange}
-                placeholder="تاريخ الطلب"
+                onChange={handleAskDate}
                 aria-label="Recipient&#39;s username"
                 aria-describedby="basic-addon2"
               />
@@ -274,16 +317,20 @@ const IstibdalMakful = () => {
             <CInputGroup className="mb-3">
               <CFormInput
                 name="ownerName"
+                type="date"
                 //value="value"
-                //onChange={handleInputChange}
-                placeholder="تاريخ تفعيل الإستبدال"
+                onChange={handleConfirmDate}
                 aria-label="Recipient&#39;s username"
                 aria-describedby="basic-addon2"
               />
             </CInputGroup>
             <div className="mb-3">
               <CFormLabel htmlFor="exampleFormControlTextarea1">ملاحظات</CFormLabel>
-              <CFormTextarea id="exampleFormControlTextarea1" rows="3"></CFormTextarea>
+              <CFormTextarea
+                onChange={handleNote}
+                id="exampleFormControlTextarea1"
+                rows="3"
+              ></CFormTextarea>
             </div>
           </CCardBody>
         </CCard>
