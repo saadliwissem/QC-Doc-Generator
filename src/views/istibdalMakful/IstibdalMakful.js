@@ -62,16 +62,25 @@ const IstibdalMakful = () => {
 
   const handleSubmit = () => {
     // Handle submission logic, e.g., send data to the server
+    console.log(formData)
+    console.log(formData2)
 
     // Reset form fields after successful submission
     setFormData({
       selectedOptions: Array(options.length).fill(false),
       otherOption: '',
     })
+    setFormData2({
+      selectedOptions: Array(options.length).fill(false),
+    })
 
     // Show success message
     alert('Form submitted successfully!')
   }
+
+  //makful 7ali info
+
+  const [makfulHali, setMakfulHali] = useState()
 
   return (
     <div dir="rtl">
@@ -134,6 +143,7 @@ const IstibdalMakful = () => {
               />
             ))}
           </CCardBody>
+
           <CCardBody>
             <CFormLabel
               htmlFor="fullName"
