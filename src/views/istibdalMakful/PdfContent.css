@@ -1,0 +1,29 @@
+.headerRihgt {
+  color: rgb(49, 49, 147);
+}
+.centerHeader {
+  color: rgb(49, 49, 147);
+  text-decoration: underline;
+  display: flex;
+  justify-content: center;
+}
+.title {
+  text-decoration: underline;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table,
+td {
+  border: 1px solid black;
+}
+
+td {
+  padding: 10px;
+}
+.list {
+  text-decoration: none;
+  list-style: none;
+}

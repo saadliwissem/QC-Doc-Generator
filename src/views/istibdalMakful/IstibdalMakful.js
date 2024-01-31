@@ -12,7 +12,7 @@ import {
   CFormSelect,
   CFormTextarea,
 } from '@coreui/react'
-
+import IstibdalMakfulPdf from './istibdalMakfulPdf'
 const IstibdalMakful = () => {
   const options = [
     'وفاة',
@@ -123,7 +123,7 @@ const IstibdalMakful = () => {
 
   //
   const [istibdal, setistibdal] = useState({
-    num: 'يتيم',
+    num: '',
     askDate: '',
     confirmDate: '',
     note: '',
@@ -140,6 +140,7 @@ const IstibdalMakful = () => {
   const handleNote = (e) => {
     setistibdal({ ...istibdal, note: e.target.value })
   }
+  //pdf dependencies
   return (
     <div dir="rtl">
       <CCol xs={12}>
@@ -350,6 +351,13 @@ const IstibdalMakful = () => {
         >
           Clear All
         </CButton>
+        <IstibdalMakfulPdf
+          makfulHali={makfulHali}
+          makfulJadid={makfulJadid}
+          formData={formData}
+          formData2={formData2}
+          istibdal={istibdal}
+        />
       </CCol>
     </div>
   )
